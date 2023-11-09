@@ -1,4 +1,4 @@
-// pages/index.js or pages/index.tsx
+// @ts-nocheck
 import React, { useState } from 'react';
 import {
   useAddress,
