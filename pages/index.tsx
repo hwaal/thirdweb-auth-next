@@ -10,6 +10,20 @@ import {
 import type { NextPage } from "next";
 import NFTPropertyCard from '../components/NFTPropertyCard'; // adjust the path as necessary
 
+// Define a type for the NFT metadata attributes
+type NFTAttribute = {
+  trait_type: string;
+  value: string;
+};
+
+// Define a type for the NFT, including the expected structure of the metadata
+type NFT = {
+  metadata: {
+    attributes: NFTAttribute[];
+    // ... include other metadata properties as needed
+  };
+};
+
 const renderNFTPropertiesAsCards = (nft) => {
   const properties = nft.metadata.attributes.reduce((acc, attribute) => {
     acc[attribute.trait_type] = attribute.value;
