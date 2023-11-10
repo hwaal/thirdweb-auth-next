@@ -115,9 +115,9 @@ const Home: NextPage = () => {
          </div>
 
          {isModalVisible && (
-           <div id="modal" className="fixed inset-0 z-50 bg-orange-400">
+           <div id="modal" className="fixed inset-0 z-[60] bg-orange-400 overflow-y-scroll">
              <div className="absolute top-5 right-5 bg-red-500 p-3 cursor-pointer" onClick={closeModal}>Sluiten</div>
-             <div className="p-10 space-y-2">
+             <div className="p-10 pb-20 space-y-2">
                <h2 className="text-2xl">Spelregels</h2>
                <h3 className="text-xl">Lees deze goed door!!1!</h3>
                <ul className="list-disc space-y-2">
