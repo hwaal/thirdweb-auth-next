@@ -66,10 +66,27 @@ const Home: NextPage = () => {
           )}
         </div>
       ) : (
-        <div className="p-5 space-y-5">
-           <img className="w-40" src="/logo.svg" />
+        <div className="w-full flex flex-col p-5 space-y-5">
+           <img className="w-64" src="/logo.svg" />
           {/* <button onClick={() => connect()}>Connect</button> */}
-          <ConnectWallet />
+          <ConnectWallet
+        theme={"dark"}
+        modalTitle={"CONNECT G"}
+        modalSize={"wide"}
+        welcomeScreen={{
+          img: {
+            src: "https://app.pastayolo.com/logo.svg",
+            width: 250,
+            height: 250,
+          },
+          title: "TINGELINGELING",
+          subtitle: "CONNECT YOUR MONEY WALLET",
+        }}
+        modalTitleIconUrl={
+          "https://app.pastayolo.com/logo.svg"
+        }
+      />
+
         </div>
       )}
     </div>
