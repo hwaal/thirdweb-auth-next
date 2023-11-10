@@ -7,6 +7,18 @@ body {
   @apply bg-yellow-500;
 }
 
+@font-face {
+  font-family: 'Spagheti';
+  src: url('/fonts/Spagheti.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Optionally, add a utility class for convenience */
+.font-spagheti {
+  font-family: 'Spagheti', sans-serif !important;
+}
+
 
 .nft-property-card {
   display: flex;

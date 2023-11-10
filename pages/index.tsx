@@ -1,6 +1,5 @@
 // @ts-nocheck
 import React, { useState } from 'react';
-import Link from 'next/link';
 import {
   useAddress,
   useMetamask,
@@ -10,72 +9,66 @@ import {
   ConnectWallet
 } from "@thirdweb-dev/react";
 import type { NextPage } from "next";
+import Link from 'next/link';
+import propertiesData from '../public/properties.json'; // Adjust the path as necessary
 
 const Home: NextPage = () => {
+  const [passwords, setPasswords] = useState({});
   const address = useAddress();
   const connect = useMetamask();
   const disconnect = useDisconnect();
   const nftCollection = useNFTCollection(process.env.NEXT_PUBLIC_CONTRACT_ADDRESS);
   const { data: ownedNFTs, isLoading } = useOwnedNFTs(nftCollection, address);
 
-  const [passwords, setPasswords] = useState({});
-
-  const handlePasswordChange = (property, value) => {
-    setPasswords({ ...passwords, [property]: value });
+  const handlePasswordChange = (propertyName, value) => {
+    setPasswords({ ...passwords, [propertyName]: value });
   };
 
-  const renderNFTPropertiesAsCards = (nft) => {
-    const properties = nft.metadata.attributes.reduce((acc, attribute) => {
-      acc[attribute.trait_type] = attribute.value;
-      return acc;
-    }, {});
-
-    return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-5">
-        {Object.entries(properties).map(([property, value], index) => (
-          <div key={property} className="mb-4">
-            {/* <label className="block mb-2">{property}</label> */}
-            <input 
-              type="password" 
-              placeholder="Enter password" 
-              onChange={(e) => handlePasswordChange(property, e.target.value)}
-              className="w-full p-5"
-            />
-            {passwords[property] === 'ABC' && (
-              <Link href={`/kaart/${property.toLowerCase()}`}>
-                <div className="p-5 bg-black text-white">Go to {property}</div>
-              </Link>
-            )}
-          </div>
-        ))}
+  const renderPropertyLinks = () => {
+    return propertiesData.map((property) => (
+      <div key={property.number} className="relative flex flex-col space-y-3 bg-white shadow-2xl">
+        {/* <div className="absolute top-3 right-3 font-bold">{property.number}</div> */}
+        <div className="flex flex-col space-y-3 p-3">
+          <img src={`/${property.image}`} alt={property.name} className="w-20 h-20" />
+          <h2 className="text-2xl">{property.description}</h2>
+        </div>
+        <div className="flex flex-col space-y-px p-3 bg-gray-200">
+          <input
+            className="border border-black/30 p-3 w-full text-center rounded-none shadow-sm"
+            type="password"
+            placeholder="Wachtwoord om door te gaan"
+            onChange={(e) => handlePasswordChange(property.name, e.target.value)}
+          />
+          {passwords[property.name] === property.password && (
+            <Link href={`/kaart/${property.name.toLowerCase()}`}>
+              <div className="w-full mt-2 inline-block bg-black text-center text-white p-3">Volgende</div>
+            </Link>
+          )}
+        </div>
       </div>
-    );
+    ));
   };
 
   return (
-    <div>
+    <div className="max-w-sm mx-auto font-spaghetiX">
       {address ? (
         <div className="p-5 pt-16 bg-yellow-500">
-          <div className="fixed inset-0 bottom-auto z-20 py-1 text-center bg-yellow-500 shadow-xl">
+          <div className="fixed inset-0 bottom-auto z-20 py-2 text-center bg-yellow-500 shadow-xl">
             <pre onClick={() => disconnect()}>{address}</pre>
           </div>
           {isLoading ? (
             <p>Loading NFTs...</p>
           ) : ownedNFTs && ownedNFTs.length > 0 ? (
-            <>
-              {ownedNFTs.map((nft) => (
-                <div key={nft.metadata.id.toString()} className="py-5 mb-8">
-                  {renderNFTPropertiesAsCards(nft)}
-                </div>
-              ))}
-            </>
+            <div className="flex flex-col space-y-5 gap-4">
+              {renderPropertyLinks()}
+            </div>
           ) : (
             <p>You do not own any NFTs from the contract.</p>
           )}
         </div>
       ) : (
         <div className="w-full flex flex-col p-5 space-y-5">
-          <img className="w-64" src="/logo.svg" />
+           <img className="mx-auto w-64" src="/logo.svg" />
           <ConnectWallet
             theme={"dark"}
             modalTitle={"CONNECT G"}

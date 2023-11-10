@@ -61,7 +61,7 @@ const ScratchCard = ({ children }) => {
     </div>
     {/* Back Button */}
     <Link href="/">
-      <div className="fixed top-5 left-5 z-30 p-5 bg-white rounded-full shadow-md hover:bg-gray-100">Back</div>
+      <div className="fixed top-5 left-5 z-30 p-3 bg-yellow-500 shadow-md hover:bg-black hover:text-white">Terug</div>
     </Link>
   </div>
   );
