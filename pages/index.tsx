@@ -115,11 +115,21 @@ const Home: NextPage = () => {
          </div>
 
          {isModalVisible && (
-           <div id="modal" className="fixed inset-0 z-50 bg-pink-400">
+           <div id="modal" className="fixed inset-0 z-50 bg-orange-400">
              <div className="absolute top-5 right-5 bg-red-500 p-3 cursor-pointer" onClick={closeModal}>Sluiten</div>
-             <div className="p-10">
-               <h2>Spelregels</h2>
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tristique velit dui, eget consequat mi rhoncus in. Ut eu tempor nunc. Integer eget tortor posuere, ornare nisi nec, volutpat augue. Ut est libero, facilisis ac dignissim eget, sagittis nec massa. Pellentesque blandit, ex et interdum aliquet, leo urna hendrerit dolor, eget interdum magna massa vel est. Sed pretium enim a nunc tempor, non imperdiet lacus porttitor. Phasellus nulla augue, fringilla ut luctus mattis, auctor consectetur augue. Duis non ultrices eros. Cras non libero et ante mattis ullamcorper.</p>
+             <div className="p-10 space-y-2">
+               <h2 className="text-2xl">Spelregels</h2>
+               <h3 className="text-xl">Lees deze goed door!!1!</h3>
+               <ul className="list-disc space-y-2">
+               <li>Je kunt 6 PASTA YOLO kaarten verdienen door de juiste antwoorden te geven</li>
+               <li>De belangrijkste kaart is je spirit animal, je gekkie. Bedoeling dat deze nooit iemand te weten komt. Je kunt iemand verslaan door jouw uitspraak te doen. Ben je bijvoorbeel onze oude vriend Rob Geus, en je laat iemand kukaratsja vinden in de kitchen, then you know, he died. Let dus op je woorden. Man man man.</li>
+               <li>Een kaart kan eenmalig gebruikt worden om mee aan te vallen of te verdedigen. Daarna maak je m inactief</li>
+               <li>Er zijn van het type kaart "Kleur" en "Leiding" hiermee kan een verbond gesmeden worden. Let op dat je niet je kleur aan de verkeerde kleur laat zien, dan ben je je kaart kwijt! Als verbond kun je ...</li>
+               <li>De rangen lopen van Maarschalk, Generaal, Kolonel, Majoor, Kapitein, Luitenant, Sergeant, Mineur, Verkenner, Spion, Bom. De bom mag uiteraard niet tikken. De mineur verslaat als enige de bom. De spion verslaat de Maarschalk.</li>
+               <li>Ben je meneer de HOF? Dan haal je altijd het eerste rondje in de kroeg, want ze doet toch niet mee met de leiding</li>
+               <li>Schotland een hele grote kans dat jij deze week nog een avond in een rok staat... </li>
+               <li>Duitsland, bied jij de heren van het organiseren comite een lekkere pitcher aan</li>
+               </ul>
              </div>
            </div>
          )}
