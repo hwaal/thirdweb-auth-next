@@ -1,5 +1,6 @@
 // @ts-nocheck
 import React, { useState } from 'react';
+import Link from 'next/link';
 import {
   useAddress,
   useMetamask,
@@ -9,40 +10,52 @@ import {
   ConnectWallet
 } from "@thirdweb-dev/react";
 import type { NextPage } from "next";
-import NFTPropertyCard from '../components/NFTPropertyCard'; // adjust the path as necessary
-
-
-const renderNFTPropertiesAsCards = (nft) => {
-  const properties = nft.metadata.attributes.reduce((acc, attribute) => {
-    acc[attribute.trait_type] = attribute.value;
-    return acc;
-  }, {});
-
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-5">
-      {Object.entries(properties).map(([property, value], index) => (
-        <NFTPropertyCard
-          key={property}
-          property={property}
-          value={value}
-        />
-      ))}
-    </div>
-  );
-};
-
 
 const Home: NextPage = () => {
   const address = useAddress();
   const connect = useMetamask();
   const disconnect = useDisconnect();
-  const nftCollection = useNFTCollection("0x77853704427d7BeB860d053400098Ce404440752");
+  const nftCollection = useNFTCollection(process.env.NEXT_PUBLIC_CONTRACT_ADDRESS);
   const { data: ownedNFTs, isLoading } = useOwnedNFTs(nftCollection, address);
+
+  const [passwords, setPasswords] = useState({});
+
+  const handlePasswordChange = (property, value) => {
+    setPasswords({ ...passwords, [property]: value });
+  };
+
+  const renderNFTPropertiesAsCards = (nft) => {
+    const properties = nft.metadata.attributes.reduce((acc, attribute) => {
+      acc[attribute.trait_type] = attribute.value;
+      return acc;
+    }, {});
+
+    return (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-5">
+        {Object.entries(properties).map(([property, value], index) => (
+          <div key={property} className="mb-4">
+            {/* <label className="block mb-2">{property}</label> */}
+            <input 
+              type="password" 
+              placeholder="Enter password" 
+              onChange={(e) => handlePasswordChange(property, e.target.value)}
+              className="w-full p-5"
+            />
+            {passwords[property] === 'ABC' && (
+              <Link href={`/kaart/${property.toLowerCase()}`}>
+                <div className="p-5 bg-black text-white">Go to {property}</div>
+              </Link>
+            )}
+          </div>
+        ))}
+      </div>
+    );
+  };
 
   return (
     <div>
       {address ? (
-        <div className="p-5 bg-yellow-500">
+        <div className="p-5 pt-16 bg-yellow-500">
           <div className="fixed inset-0 bottom-auto z-20 py-1 text-center bg-yellow-500 shadow-xl">
             <pre onClick={() => disconnect()}>{address}</pre>
           </div>
@@ -50,16 +63,11 @@ const Home: NextPage = () => {
             <p>Loading NFTs...</p>
           ) : ownedNFTs && ownedNFTs.length > 0 ? (
             <>
-              {/* Map over ownedNFTs and render the properties as cards */}
-              {ownedNFTs && ownedNFTs.length > 0 && (
-                <div>
-                  {ownedNFTs.map((nft) => (
-                    <div key={nft.metadata.id.toString()} className="py-5 mb-8">
-                      {renderNFTPropertiesAsCards(nft)}
-                    </div>
-                  ))}
+              {ownedNFTs.map((nft) => (
+                <div key={nft.metadata.id.toString()} className="py-5 mb-8">
+                  {renderNFTPropertiesAsCards(nft)}
                 </div>
-              )}
+              ))}
             </>
           ) : (
             <p>You do not own any NFTs from the contract.</p>
@@ -67,26 +75,24 @@ const Home: NextPage = () => {
         </div>
       ) : (
         <div className="w-full flex flex-col p-5 space-y-5">
-           <img className="w-64" src="/logo.svg" />
-          {/* <button onClick={() => connect()}>Connect</button> */}
+          <img className="w-64" src="/logo.svg" />
           <ConnectWallet
-        theme={"dark"}
-        modalTitle={"CONNECT G"}
-        modalSize={"wide"}
-        welcomeScreen={{
-          img: {
-            src: "https://app.pastayolo.com/logo.svg",
-            width: 250,
-            height: 250,
-          },
-          title: "TINGELINGELING",
-          subtitle: "CONNECT YOUR MONEY WALLET",
-        }}
-        modalTitleIconUrl={
-          "https://app.pastayolo.com/logo.svg"
-        }
-      />
-
+            theme={"dark"}
+            modalTitle={"CONNECT G"}
+            modalSize={"wide"}
+            welcomeScreen={{
+              img: {
+                src: "https://app.pastayolo.com/logo.svg",
+                width: 250,
+                height: 250,
+              },
+              title: "TINGELINGELING",
+              subtitle: "CONNECT YOUR MONEY WALLET",
+            }}
+            modalTitleIconUrl={
+              "https://app.pastayolo.com/logo.svg"
+            }
+          />
         </div>
       )}
     </div>
