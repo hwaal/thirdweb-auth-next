@@ -27,7 +27,7 @@
       "number": 4,
       "name": "Kleur",
       "image": "3.png",
-      "description": "Vibrant and full of life, Kleur adds color to the world.",
+      "description": "Hoe gonst de beursklok?",
       "colorCode": "#ff3300",
       "password": "KLE012"
     },
@@ -35,9 +35,9 @@
       "number": 5,
       "name": "Tentje",
       "image": "logo.svg",
-      "description": "Cozy and inviting, Tentje is a place of comfort and shelter.",
+      "description": "Hoe gonst de beursklok?",
       "colorCode": "#ff3300",
-      "password": "TEN345"
+      "password": "Anna"
     },
     {
       "number": 6,
