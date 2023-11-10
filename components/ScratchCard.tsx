@@ -2,7 +2,7 @@
 import React, { useRef, useEffect } from 'react';
 import Link from 'next/link'; // Import Link from Next.js
 
-const ScratchCard = ({ children }) => {
+const ScratchCard = ({ colorCode, children }) => {
   const canvasRef = useRef(null);
   const isScratching = useRef(false);
 
@@ -14,7 +14,7 @@ const ScratchCard = ({ children }) => {
     canvas.width = rect.width;
     canvas.height = rect.height;
 
-    ctx.fillStyle = '#c0c0c0';
+    ctx.fillStyle = colorCode;
     ctx.fillRect(0, 0, rect.width, rect.height);
 
     const startScratch = (e) => {
@@ -51,7 +51,7 @@ const ScratchCard = ({ children }) => {
       window.removeEventListener('mouseup', endScratch);
       window.removeEventListener('touchend', endScratch);
     };
-  }, []);
+  }, [colorCode]);
 
   return (
     <div className="relative">

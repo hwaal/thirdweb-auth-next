@@ -14,9 +14,25 @@ body {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Spagheti Back';
+  src: url('/fonts/Spagheti_Back.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 /* Optionally, add a utility class for convenience */
 .font-spagheti {
   font-family: 'Spagheti', sans-serif !important;
+}
+
+.font-spagheti-back {
+  font-family: 'Spagheti Back', sans-serif !important;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 0 black;
 }
 
 
