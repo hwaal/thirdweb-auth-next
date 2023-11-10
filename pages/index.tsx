@@ -112,7 +112,7 @@ const Home: NextPage = () => {
     <div className="max-w-sm mx-auto">
       {address ? (
         <div className="p-5 pt-16 bg-yellow-500">
-          <div className="fixed inset-0 bottom-auto z-20 py-2 text-center bg-yellow-500 shadow-xl">
+          <div className="fixed inset-0 bottom-auto z-40 py-2 text-center bg-yellow-500 shadow-xl">
             <pre onClick={() => disconnect()}>{address}</pre>
           </div>
           {isLoading ? (
