@@ -2,17 +2,17 @@
     {
       "number": 1,
       "name": "Gekkie",
-      "image": "logo.svg",
-      "description": "Unique and quirky, Gekkie stands out in a crowd.",
+      "image": "1.jpg",
+      "description": "Verdien je gekkie. Wie was de eerste pappa van de Yolo?",
       "colorCode": "#ff3300",
-      "password": "GEK123"
+      "password": "Onno"
     },
     {
       "number": 2,
       "name": "Rang",
       "image": "2.png",
       "description": "Symbolizing order and structure, Rang brings harmony.",
-      "colorCode": "#00ff33",
+      "colorCode": "#ff3300",
       "password": "RAN456"
     },
     {
@@ -20,7 +20,7 @@
       "name": "Land",
       "image": "3.png",
       "description": "Gebied met eigen grenzen",
-      "colorCode": "#3300ff",
+      "colorCode": "#ff3300",
       "password": "land"
     },
     {
@@ -28,7 +28,7 @@
       "name": "Kleur",
       "image": "3.png",
       "description": "Vibrant and full of life, Kleur adds color to the world.",
-      "colorCode": "#ffcc00",
+      "colorCode": "#ff3300",
       "password": "KLE012"
     },
     {
@@ -36,7 +36,7 @@
       "name": "Tentje",
       "image": "logo.svg",
       "description": "Cozy and inviting, Tentje is a place of comfort and shelter.",
-      "colorCode": "#ff00cc",
+      "colorCode": "#ff3300",
       "password": "TEN345"
     },
     {
@@ -44,7 +44,7 @@
       "name": "Leiding",
       "image": "logo.svg",
       "description": "Leiding symbolizes leadership and guidance.",
-      "colorCode": "#00ccff",
+      "colorCode": "#ff3300",
       "password": "LEI678"
     }
   ]

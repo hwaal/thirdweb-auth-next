@@ -67,13 +67,25 @@ const Home: NextPage = () => {
   };
 
   const renderPropertyLinks = () => {
-    return propertiesData.map((property) => (
+    return propertiesData.map((property) => {
+
+      const cardUsed = typeof window !== 'undefined' ? localStorage.getItem(`card-used-${property.name.toLowerCase()}`) === 'true' : false;
+
+      return (
+
       <div key={property.number} style={{ backgroundColor: property.colorCode }} className="relative flex flex-col bg-white shadow-2xl">
+
+        {cardUsed && (
+          <div className="absolute inset-0 z-50 bg-[#ff3300]/70 flex flex-col items-center justify-center pointer-events-none">
+            <h3 className="text-2xl font-bold text-center text-white">Deze kaart <br /> heb je gebruikt</h3>
+          </div>
+        )}
+
         <div className="relative flex flex-col h-80">
           {(passwords[property.name] === property.password || hasVisitedProperty(property.name)) && (
-            <img className="absolute inset-0 z-20 w-full h-full object-cover" src={`/${property.image}`} alt={property.name} />
+            <img className="absolute inset-0 z-20 w-full h-full object-cover pointer-events-none" src={`/${property.image}`} alt={property.name} />
           )}
-          <img className="absolute inset-0 w-full h-full object-cover opacity-50" src="/logo.svg" />
+          <img className="absolute inset-0 w-full h-full object-cover pointer-events-none" src="/logo.svg" />
         </div>
         
         <div className="flex flex-col space-y-3 p-3 bg-white">
@@ -83,7 +95,7 @@ const Home: NextPage = () => {
               <input
                 className="border border-black/30 p-3 w-full text-center rounded-none shadow-sm"
                 type="password"
-                placeholder="Wachtwoord"
+                placeholder="Antwoord"
                 onChange={(e) => handlePasswordChange(property.name, e.target.value)}
               />
               {passwords[property.name] === property.password && (
@@ -94,31 +106,33 @@ const Home: NextPage = () => {
             </>
           ) : (
             <>
-              <div className="">
+              {/* <div className="">
                 <p>Je bent {property.name}</p>
                 <h2 className="text-4xl">{nftData[property.name.toLowerCase()] || ''}</h2>
-              </div>
+              </div> */}
               <Link href={`/kaart/${property.name.toLowerCase()}`}>
-                <div className="w-full mt-2 inline-block bg-black text-center text-white p-3">Bekijk</div>
+                <div className="w-full mt-2 inline-block bg-[#ff3300] text-center text-white p-3">Bekijk je {property.name}</div>
               </Link>
             </>
           )}
         </div>
       </div>
-    ));
+     );
+    });
   };
 
   return (
     <div className="max-w-sm mx-auto">
       {address ? (
-        <div className="p-5 pt-16 bg-yellow-500">
-          <div className="fixed inset-0 bottom-auto z-40 py-2 text-center bg-yellow-500 shadow-xl">
+        <div className="p-5 py-16 bg-yellow-500">
+          <div className="fixed inset-0 top-auto z-40 py-2 text-center text-xs bg-yellow-500 shadow-xl">
             <pre onClick={() => disconnect()}>{address}</pre>
           </div>
           {isLoading ? (
             <p>TINGELINGELING...</p>
           ) : ownedNFTs && ownedNFTs.length > 0 ? (
             <div className="flex flex-col space-y-5 gap-4">
+              <img className="w-full h-full object-cover" src="/logo.svg" />
               {renderPropertyLinks()}
             </div>
           ) : (
@@ -126,7 +140,7 @@ const Home: NextPage = () => {
           )}
         </div>
       ) : (
-        <div className="w-full flex flex-col p-5 space-y-5">
+        <div className="w-full h-screen flex flex-col justify-center p-5 space-y-8">
            <img className="mx-auto w-64" src="/logo.svg" />
           <ConnectWallet
             theme={"dark"}

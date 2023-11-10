@@ -34,15 +34,34 @@ const PropertyPage = () => {
     }
   }, [address, propertyQuery, nftCollection]);
 
+  const [cardUsed, setCardUsed] = useState(typeof window !== 'undefined' ? localStorage.getItem(`card-used-${propertyQuery.toLowerCase()}`) === 'true' : false);
+
+  const handleUseCard = () => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem(`card-used-${propertyQuery.toLowerCase()}`, 'true');
+      setCardUsed(true);
+    }
+  };
+
   if (!propertyValue) {
     return <div className="p-5">TINGELINGELING...</div>;
   }
 
   return (
     <div className="h-screen w-screen overflow-hidden">
-    <div class="fixed inset-0 top-auto z-50 p-3 text-center text-2xl font-bold bg-yellow-500 shadow-xl">
-        Je bent {propertyQuery}
-    </div>
+
+        {cardUsed ? (
+      <div className="fixed top-5 right-5 z-30 p-3 bg-[#ff3300] text-white shadow-md">Deze kaart is gebruikt</div>
+    ) : (
+      <div onClick={handleUseCard} className="fixed top-5 right-5 z-30 p-3 bg-black text-white shadow-md hover:bg-black hover:text-white">Gebruik je kaart</div>
+    )}
+        
+        <Link href="/">
+            <div className="fixed top-5 left-5 z-30 p-3 bg-yellow-500 shadow-md hover:bg-black hover:text-white">Terug</div>
+        </Link>
+        <div class="fixed inset-0 top-auto z-50 pb-5 pointer-events-none select-none text-center text-7xl font-spagheti font-bold bg-yellow-500X shadow-xl capitalize">
+            {propertyQuery}
+        </div>
       <ScratchCard colorCode={colorCode}>
         <div className="h-full w-full flex items-center justify-center">
           <div className="text-center">
@@ -50,6 +69,7 @@ const PropertyPage = () => {
           </div>
         </div>
       </ScratchCard>
+      <img className="fixed inset-0 w-full h-full object-cover pointer-events-none" src="/logo.svg" />
     </div>
   );
 };

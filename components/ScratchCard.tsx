@@ -59,10 +59,6 @@ const ScratchCard = ({ colorCode, children }) => {
     <div className="fixed inset-0 z-10 flex">
       {children}
     </div>
-    {/* Back Button */}
-    <Link href="/">
-      <div className="fixed top-5 left-5 z-30 p-3 bg-yellow-500 shadow-md hover:bg-black hover:text-white">Terug</div>
-    </Link>
   </div>
   );
 };
