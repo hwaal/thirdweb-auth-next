@@ -6,6 +6,7 @@ import {
   useDisconnect,
   useNFTCollection,
   useOwnedNFTs,
+  ConnectWallet
 } from "@thirdweb-dev/react";
 import type { NextPage } from "next";
 import NFTPropertyCard from '../components/NFTPropertyCard'; // adjust the path as necessary
@@ -67,7 +68,8 @@ const Home: NextPage = () => {
       ) : (
         <div className="p-5 space-y-5">
            <img className="w-40" src="/logo.svg" />
-          <button onClick={() => connect()}>Connect</button>
+          {/* <button onClick={() => connect()}>Connect</button> */}
+          <ConnectWallet />
         </div>
       )}
     </div>
