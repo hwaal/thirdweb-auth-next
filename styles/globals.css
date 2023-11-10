@@ -2,9 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
+html {
   @apply bg-yellow-500;
+}
+
+html {
+  background-image: url('/Loading.gif');
 }
 
 @font-face {

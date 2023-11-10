@@ -75,8 +75,10 @@ const Home: NextPage = () => {
 
       <div key={property.number} style={{ backgroundColor: property.colorCode }} className="relative flex flex-col bg-white shadow-2xl">
 
+        <img className="absolute left-0 top-0 w-16 h-16 z-30" src="/PASTA-YOLO-10-COIN.gif" />
+
         {cardUsed && (
-          <div className="absolute inset-0 z-50 bg-[#ff3300]/70 flex flex-col items-center justify-center pointer-events-none">
+          <div className="absolute inset-0 z-30 bg-[#ff3300]/70 flex flex-col items-center justify-center pointer-events-none">
             <h3 className="text-2xl font-bold text-center text-white">Deze kaart <br /> heb je gebruikt</h3>
           </div>
         )}
@@ -124,8 +126,8 @@ const Home: NextPage = () => {
   return (
     <div className="max-w-sm mx-auto">
       {address ? (
-        <div className="p-5 py-16 bg-yellow-500">
-          <div className="fixed inset-0 top-auto z-40 py-2 text-center text-xs bg-yellow-500 shadow-xl">
+        <div className="p-5 py-16">
+          <div className="fixed inset-0 top-auto z-50 py-2 text-center text-xs bg-yellow-500 shadow-xl">
             <pre onClick={() => disconnect()}>{address}</pre>
           </div>
           {isLoading ? (
@@ -148,7 +150,7 @@ const Home: NextPage = () => {
             modalSize={"wide"}
             welcomeScreen={{
               img: {
-                src: "https://app.pastayolo.com/logo.svg",
+                src: "https://app.pastayolo.com/PASTA-YOLO-10-COIN.gif",
                 width: 250,
                 height: 250,
               },
