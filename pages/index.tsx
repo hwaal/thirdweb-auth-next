@@ -92,7 +92,7 @@ const Home: NextPage = () => {
              <input
               className="border border-black/30 p-3 w-full text-center rounded-none shadow-sm"
               type="password"
-              placeholder="Wachtwoord om door te gaan"
+              placeholder="Wachtwoord"
               onChange={(e) => handlePasswordChange(property.name, e.target.value)}
             />
             {passwords[property.name] === property.password && (

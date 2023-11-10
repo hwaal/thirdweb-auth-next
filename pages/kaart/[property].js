@@ -41,7 +41,7 @@ const PropertyPage = () => {
   return (
     <div className="h-screen w-screen overflow-hidden">
     <div class="fixed inset-0 top-auto z-50 p-3 text-center text-2xl font-bold bg-yellow-500 shadow-xl">
-        Jouw {propertyQuery} is
+        Je bent {propertyQuery}
     </div>
       <ScratchCard colorCode={colorCode}>
         <div className="h-full w-full flex items-center justify-center">
