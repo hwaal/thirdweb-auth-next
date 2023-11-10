@@ -100,7 +100,7 @@ const Home: NextPage = () => {
               />
               {passwords[property.name] === property.password && (
                 <Link href={`/kaart/${property.name.toLowerCase()}`}>
-                  <div className="w-full mt-2 inline-block bg-black text-center text-white p-3">Volgende!</div>
+                  <div className="w-full mt-2 inline-block bg-black text-center text-white p-3">Bekijk je {nftData[property.name.toLowerCase()] || ''}!</div>
                 </Link>
               )}
             </>

@@ -51,9 +51,9 @@ const PropertyPage = () => {
     <div className="h-screen w-screen overflow-hidden">
 
         {cardUsed ? (
-      <div className="fixed top-5 right-5 z-30 p-3 bg-[#ff3300] text-white shadow-md">Deze kaart is gebruikt</div>
+      <div className="fixed top-5 right-5 z-30 p-3 bg-[#ff3300] text-white shadow-md cursor-crosshair">Deze kaart is gebruikt</div>
     ) : (
-      <div onClick={handleUseCard} className="fixed top-5 right-5 z-30 p-3 bg-black text-white shadow-md hover:bg-black hover:text-white">Gebruik je kaart</div>
+      <div onClick={handleUseCard} className="fixed top-5 right-5 z-30 p-3 bg-black text-white shadow-md hover:bg-black hover:text-white cursor-pointer">Gebruik je kaart</div>
     )}
         
         <Link href="/">
