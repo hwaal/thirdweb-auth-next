@@ -5,47 +5,47 @@
       "image": "1.jpg",
       "description": "Verdien je gekkie. Wie was de eerste pappa van de Yolo?",
       "colorCode": "#ff3300",
-      "password": "Onno"
+      "password": "onno"
     },
     {
       "number": 2,
       "name": "Rang",
       "image": "2.png",
-      "description": "Symbolizing order and structure, Rang brings harmony.",
+      "description": "Mijn broer was van de wat?",
       "colorCode": "#ff3300",
-      "password": "RAN456"
+      "password": "verkeerdekant"
     },
     {
       "number": 3,
       "name": "Land",
       "image": "3.png",
-      "description": "Gebied met eigen grenzen",
+      "description": "Wat is een goed jaar?",
       "colorCode": "#ff3300",
-      "password": "land"
+      "password": "2013"
     },
     {
       "number": 4,
       "name": "Kleur",
-      "image": "3.png",
+      "image": "5.png",
       "description": "Hoe gonst de beursklok?",
       "colorCode": "#ff3300",
-      "password": "KLE012"
+      "password": "anna"
     },
     {
       "number": 5,
       "name": "Tentje",
-      "image": "logo.svg",
-      "description": "Hoe gonst de beursklok?",
+      "image": "4.png",
+      "description": "Postcode",
       "colorCode": "#ff3300",
-      "password": "Anna"
+      "password": "7737pt"
     },
     {
       "number": 6,
       "name": "Leiding",
-      "image": "logo.svg",
-      "description": "Leiding symbolizes leadership and guidance.",
+      "image": "6.png",
+      "description": "Hoeveel klinker zitten er in De sjeik zat op de fiets",
       "colorCode": "#ff3300",
-      "password": "LEI678"
+      "password": "72"
     }
   ]
   

@@ -51,11 +51,11 @@ const PropertyPage = () => {
     <div className="h-screen w-screen overflow-hidden">
 
         {cardUsed ? (
-      <div className="fixed top-5 right-5 z-30 p-3 bg-[#ff3300] text-white shadow-md cursor-crosshair">Deze kaart heb je gebruikt</div>
+      <div className="fixed top-5 right-5 z-30 p-3 bg-[#ff3300] text-white shadow-md cursor-crosshair">Sufferd</div>
     ) : (
       <div onClick={handleUseCard} className="fixed top-5 right-5 z-30 p-3 flex items-center space-x-3  bg-black text-white shadow-md hover:bg-black hover:text-white cursor-pointer">
         <img className="w-8 h-8 z-30" src="/PASTA-YOLO-10-COIN.gif" />
-        <span>Gebruik je <strong>{propertyQuery}</strong> kaart</span>
+        <span>Hier niet op klikken</span>
     </div>
     )}
         

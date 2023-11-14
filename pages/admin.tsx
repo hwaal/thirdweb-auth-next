@@ -23,7 +23,12 @@ const AdminPage = () => {
   }
 
   useEffect(() => {
-    if (address === "0x6e5c93251567B9DBc38b45F5E115805049066759" && nftCollection) {
+    if (
+      (address === "0x6e5c93251567B9DBc38b45F5E115805049066759" ||
+      address === "0x22e7cc09875b8d6A96F420F3fD83755571f736aC" ||
+      address === "0x9a852849E7869FA7706471E0DcDb517178123440") && 
+      nftCollection
+    ) {
       nftCollection.getAll().then((allNfts) => {
         // Filter out NFTs that are not minted
         const mintedNfts = allNfts.filter(nft => nft.owner !== "0x0000000000000000000000000000000000000000");
@@ -50,7 +55,14 @@ const AdminPage = () => {
     }
   }, [address, nftCollection]);
 
-  if (address !== "0x6e5c93251567B9DBc38b45F5E115805049066759") {
+  // Check if the connected address is one of the allowed addresses
+  const isAllowedAddress = (
+    address === "0x6e5c93251567B9DBc38b45F5E115805049066759" ||
+    address === "0x22e7cc09875b8d6A96F420F3fD83755571f736aC" ||
+    address === "0x9a852849E7869FA7706471E0DcDb517178123440"
+  );
+
+  if (!isAllowedAddress) {
     return (
       <div>
         <ConnectWallet
