@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import type { AppProps } from "next/app";
+import Head from 'next/head';
 import {
   ThirdwebProvider,
   ConnectWallet,
@@ -27,6 +28,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         authUrl: "/api/auth",
       }}
     >
+        <Head>
+        <title>PASTA YOLO LUSTRUM 2023</title>
+        <link rel="icon" href="/YOLO-COIN.png" />
+      </Head>
       <Component {...pageProps} />
     </ThirdwebProvider>
   );
