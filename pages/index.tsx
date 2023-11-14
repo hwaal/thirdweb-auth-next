@@ -177,27 +177,25 @@ const Home: NextPage = () => {
                <ul className="list-disc space-y-2">
                <li>Je kunt 6 PASTA YOLO kaarten verdienen door de juiste antwoorden te geven</li>
                <li>De belangrijkste kaart is je spirit animal, je gekkie. Bedoeling dat deze nooit iemand te weten komt. Je kunt iemand verslaan door jouw uitspraak te doen. Ben je bijvoorbeel onze oude vriend Rob Geus, en je laat iemand kukaratsja vinden in de kitchen, then you know, he died. Let dus op je woorden. Man man man.</li>
-               <li>Er zijn van het type kaart "Kleur" en "Leiding" hiermee kan een verbond gesmeden worden. Let op dat je niet je kleur aan de verkeerde kleur laat zien, dan ben je je kaart kwijt! Als verbond kun je ...</li>
                <li>11 uur moment van meneer de HL terug in de trein</li>
                <li>De rangen lopen van Maarschalk, Generaal, Kolonel, Majoor, Kapitein, Luitenant, Sergeant, Mineur, Verkenner, Spion, Bom. De bom mag uiteraard niet tikken. De mineur verslaat als enige de bom. De spion verslaat de Maarschalk.</li>
-               <li>Ben je meneer de HOF? Dan haal je altijd het eerste rondje in de kroeg, want je doet toch niet mee met de leiding</li>
-               <li>Schotland een hele grote kans dat jij deze week nog een avond in een rok staat... </li>
-               <li>Neeee beter als he, je mag iets beters voorstellen</li>
+               <li>Ben je meneer de HOF? Dan haal je altijd het eerste rondje in de kroeg, en wat lekkers voor in de kring</li>
+               <li>Zo nodig helpt een keuken adju hem</li>
+               <li>Leuke zo'n schotse rok</li>
                <li>Ierland als je een Irish pub tegenkomt drink je een Guinnes</li>
                <li>Probeer je Poolse zloty te slijten</li>
-               <li>Duitsland mooie thuis wedstrijd lul</li>
                <li>Zwitserland bewaakt ten alle tijden de pot, of vult hem zonodig zelf aan</li>
                <li>Ja jongens, jullie raden het al, vanavond is de leidingwissel...!!! leiding maak er wat leuks van</li>
                <li>Duitsland, bied jij de heren van het organiseren comite een lekkere pitcher aan</li>
-               <li>Boodschappen Gekkie (Adju), bestelling met de lunch opnemen</li>
                <li>Meneer de KC neemt een programmadagdeel over</li>
                <li>Mineur opent elke dag zijn nieuws app en deelt het meeste deprimerende bericht</li>
                <li>Spanje leert The Juice elke dag 5 woorden spaans. </li>
+               <li>Gierige hollander mag keer wat minder in de pot doen</li>
                <li>Vind een mede adju en doe een stunt. De leiding kijkt toe onder het genot van een adje</li>
-               <li>Onenigheidje? Vraag de maarschalk om de uitspraak</li>
+               <li>Onenigheidje? Vraag de maarschalk om een uitspraak te doen</li>
                <li>Engeland "god save the queen" bij andere YOLO deelnemer</li>
                <li>De sergeanten maken de manschappen op zondag wakker</li>
-               <li>Bom bommetje in het water</li>
+               <li>Bom bommetje in de water, is normaal</li>
                <li>De luitenant luisterd aandachtig naar zijn meerdere</li>
                </ul>
              </div>

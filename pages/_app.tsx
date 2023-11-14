@@ -15,6 +15,11 @@ const activeChain = "ethereum";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
+    <>
+     <Head>
+        <title>PASTA YOLO LUSTRUM 2023</title>
+        <link rel="icon" href="/YOLO-COIN.png" />
+      </Head>
     <ThirdwebProvider
       activeChain={activeChain}
       supportedWallets={[
@@ -28,12 +33,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         authUrl: "/api/auth",
       }}
     >
-        <Head>
-        <title>PASTA YOLO LUSTRUM 2023</title>
-        <link rel="icon" href="/YOLO-COIN.png" />
-      </Head>
       <Component {...pageProps} />
     </ThirdwebProvider>
+    </>
   );
 }
 
