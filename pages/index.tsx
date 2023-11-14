@@ -183,10 +183,11 @@ const Home: NextPage = () => {
                <li>Ben je meneer de HOF? Dan haal je altijd het eerste rondje in de kroeg, want je doet toch niet mee met de leiding</li>
                <li>Schotland een hele grote kans dat jij deze week nog een avond in een rok staat... </li>
                <li>Neeee beter als he, je mag iets beters voorstellen</li>
+               <li>Ierland als je een Irish pub tegenkomt drink je een Guinnes</li>
                <li>Probeer je Poolse zloty te slijten</li>
                <li>Duitsland mooie thuis wedstrijd lul</li>
                <li>Zwitserland bewaakt ten alle tijden de pot, of vult hem zonodig zelf aan</li>
-               <li>Ja jongens, jullie raden, vanavond is de leidingwissel... leiding maak er wat leuks van</li>
+               <li>Ja jongens, jullie raden het al, vanavond is de leidingwissel...!!! leiding maak er wat leuks van</li>
                <li>Duitsland, bied jij de heren van het organiseren comite een lekkere pitcher aan</li>
                <li>Boodschappen Gekkie (Adju), bestelling met de lunch opnemen</li>
                <li>Meneer de KC neemt een programmadagdeel over</li>
