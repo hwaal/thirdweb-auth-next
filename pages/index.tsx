@@ -177,7 +177,7 @@ const Home: NextPage = () => {
             <div className="fixed flex flex-col inset-0 bottom-auto z-50 w-full p-4 bg-yellow-300 text-center">
               
               <div className="mx-auto relative">
-                <img className="w-40" src="https://www.biernet.nl/images/soort/webp/83719-de-klok-halve-liter-blik.webp?w=330" />
+                <img className="w-24" src="https://www.biernet.nl/images/soort/webp/83719-de-klok-halve-liter-blik.webp?w=330" />
               </div>
               Wat goed van jou ontzettende yolo-er: je eerste vraag goed. Vraag om een lekkere koude versnapering bij de organisatie.
               <button onClick={handleClose2} className="bg-black text-white font-bold p-2">
