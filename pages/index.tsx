@@ -159,7 +159,7 @@ const Home: NextPage = () => {
           <h2>?</h2>
          </div>
 
-         {showVisitedDiv && visitedCount >= 3 && visitedCount <= 4 && (
+         {showVisitedDiv && visitedCount === 3 && (
             <div className="fixed flex flex-col inset-0 bottom-auto z-50 w-full p-4 bg-yellow-300 text-center">
               
               <div className="mx-auto relative">
