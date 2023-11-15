@@ -25,6 +25,7 @@ const Home: NextPage = () => {
 
   const [visitedCount, setVisitedCount] = useState(0);
   const [showVisitedDiv, setShowVisitedDiv] = useState(true);
+  const [showVisitedDiv2, setShowVisitedDiv2] = useState(true);
 
   const countVisitedPages = () => {
     const visited = [];
@@ -52,6 +53,10 @@ const Home: NextPage = () => {
 
   const handleClose = () => {
     setShowVisitedDiv(false);
+  };
+
+  const handleClose2 = () => {
+    setShowVisitedDiv2(false);
   };
 
   useEffect(() => {
@@ -164,6 +169,19 @@ const Home: NextPage = () => {
               He wat goed zeg, je hebt een Pasta Yolo trui gewonnen!!! Je mag m ophalen bij de organisatie
               <button onClick={handleClose} className="bg-black text-white font-bold p-2">
               Ja, ik heb de trui ontvangen
+              </button>
+            </div>
+          )}
+
+          {showVisitedDiv2 && visitedCount >= 1 && visitedCount <= 2 && (
+            <div className="fixed flex flex-col inset-0 bottom-auto z-50 w-full p-4 bg-yellow-300 text-center">
+              
+              <div className="mx-auto relative">
+                <img className="w-40" src="https://www.biernet.nl/images/soort/webp/83719-de-klok-halve-liter-blik.webp?w=330" />
+              </div>
+              Wat goed van jou ontzettende yolo-er: je eerste vraag goed. Vraag om een lekkere koude versnapering bij de organisatie.
+              <button onClick={handleClose2} className="bg-black text-white font-bold p-2">
+              Ja, ik heb mijn biertje gead
               </button>
             </div>
           )}
